@@ -8,3 +8,5 @@ docker exec -it <container_id> npm install
 
 When there is change in code 
 will be reflected automatically
+
+Open the app by accessing localhost:8088, following line 4 above
