@@ -12,5 +12,12 @@ will be reflected automatically
 Open the app by accessing localhost:8088, following line 4 above
 
 
-Branches:
-sesi 4: main
+Build:
+docker build -t sesi5 .
+
+Run:
+docker run --rm sesi5
+-- rm flag is to auto-delete container if any
+
+or with mounting (make sure node_modules are exists, even its empty folder)
+docker run --rm -it -v ${PWD}:/app  sesi5 sh -lc "npm install && npm test"
