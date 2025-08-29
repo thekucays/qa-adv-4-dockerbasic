@@ -11,7 +11,7 @@ pipeline {
 
                 // Run build + test from the workspace directory
                 sh '''
-                    cd ${WORKSPACE}
+                    cd ${WORKSPACE} && echo ${WORKSPACE}
                     docker-compose up --build --exit-code-from test-runner
                 '''
             }
