@@ -34,3 +34,6 @@ docker exec -it <container-id> cat /var/jenkins_home/secrets/initialAdminPasswor
 install docker plugin, by using bash on container
 docker exec -it <id> bash
 apt-get update && apt-get install -y docker.io docker-compose
+
+Jenkins
+thekucays - admin123
