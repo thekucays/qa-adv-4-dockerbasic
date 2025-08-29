@@ -18,17 +18,13 @@ pipeline {
                     echo "=== END DEBUGGING ==="
                 '''
 
-                // Clean up old containers, networks, volumes
-                sh '''
-                    docker-compose down --volumes --remove-orphans || true
-                '''
-
                 // Run build + test
                 sh '''
                     cd ${WORKSPACE}
-                    echo "Now in: $(pwd)" && ls -la
+                    docker-compose down --volumes --remove-orphans || true
                     docker-compose up --build --exit-code-from test-runner
                 '''
+
             }
         }
     }
