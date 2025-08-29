@@ -10,9 +10,9 @@ pipeline {
                         docker-compose down --volumes --remove-orphans || true
                     '''
 
-                    // Run build + test
+                    // Run build + test with explicit WORKSPACE
                     sh '''
-                        docker-compose up --build --exit-code-from test-runner
+                        WORKSPACE=${WORKSPACE} docker-compose up --build --exit-code-from test-runner
                     '''
                 }
             }
