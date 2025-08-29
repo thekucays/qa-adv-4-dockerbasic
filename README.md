@@ -35,6 +35,8 @@ run Jenkins
 8080: container port
 docker run -d --name jenkins -u root -p 8087:8080 -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkins/jenkins:lts
 
+docker run -d -p 8087:8080 -p 50000:50000 -u root -v //var/run/docker.sock:/var/run/docker.sock -v C:\jenkins_data:/var/jenkins_home jenkins/jenkins:lts
+
 ----------------------------------------------------------------------
 get initial password
 ----------------------------------------------------------------------
