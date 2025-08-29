@@ -1,0 +1,17 @@
+# Exclude common unwanted files
+node_modules
+npm-debug.log
+.git
+.gitignore
+README.md
+.env
+.nyc_output
+coverage
+
+# But explicitly include these important files
+!package.json
+!package-lock.json
+!test/
+!Dockerfile
+!docker-compose.yml
+!Jenkinsfile
