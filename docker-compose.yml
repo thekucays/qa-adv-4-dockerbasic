@@ -7,7 +7,6 @@ services:
       dockerfile: Dockerfile
     working_dir: /app
     volumes:
-    volumes:
       - ${WORKSPACE:-.}:/app
       # - .:/app
       # - ${WORKSPACE}:/app
