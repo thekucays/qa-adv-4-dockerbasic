@@ -4,17 +4,16 @@ pipeline {
     stages {
         stage('Build & Test') {
             steps {
-                dir("${WORKSPACE}") {
-                    // Clean up old containers, networks, volumes
-                    sh '''
-                        docker-compose down --volumes --remove-orphans || true
-                    '''
+                // Clean up old containers, networks, volumes
+                sh '''
+                    docker-compose down --volumes --remove-orphans || true
+                '''
 
-                    // Run build + test with explicit WORKSPACE
-                    sh '''
-                        WORKSPACE=${WORKSPACE} docker-compose up --build --exit-code-from test-runner
-                    '''
-                }
+                // Run build + test from the workspace directory
+                sh '''
+                    cd ${WORKSPACE}
+                    docker-compose up --build --exit-code-from test-runner
+                '''
             }
         }
     }
