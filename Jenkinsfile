@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build & Test') {
             steps {
-                sh 'docker-compose up --build --force-recreate --remove-orphans --exit-code-from test-runner'
+                sh 'docker-compose up --build --force-recreate --renew-anon-volumes --remove-orphans --exit-code-from test-runner'
             }
         }
     }
