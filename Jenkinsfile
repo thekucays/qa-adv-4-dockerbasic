@@ -27,7 +27,7 @@ pipeline {
                 sh '''
                     cd ${WORKSPACE}
                     echo "Now in: $(pwd)" && ls -la
-                    WORKSPACE_PATH=${WORKSPACE} docker-compose up --build --exit-code-from test-runner
+                    docker-compose up --build --exit-code-from test-runner
                 '''
             }
         }
