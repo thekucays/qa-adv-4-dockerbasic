@@ -7,7 +7,9 @@ services:
       dockerfile: Dockerfile
     working_dir: /app
     volumes:
-      - .:/app
+    volumes:
+      - ${WORKSPACE:-.}:/app
+      # - .:/app
       # - ${WORKSPACE}:/app
     command: sh -lc "npm install && npm test"
     # If you need interactive debugging:
