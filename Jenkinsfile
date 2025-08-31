@@ -9,7 +9,9 @@ pipeline {
                     echo "Current directory: $(pwd)"
                     echo "WORKSPACE: ${WORKSPACE}"
                     echo "Files in current directory:"
-                    ls -la
+                    ls -la 
+                    echo "Files in WORKSPACE:"
+                    ls -la ${WORKSPACE}
                     echo ""
                     echo "=== END DEBUGGING - Jenkinsfile ==="
 
