@@ -8,7 +8,8 @@ services:
     working_dir: /app
     volumes:
       # - .:/app
-      - /var/jenkins_home/workspace/sesi7-1:/app
+      # - /var/jenkins_home/workspace/sesi7-1:/app
+      - ${WORKSPACE}:/app
     command: sh -lc "echo '=== CONTAINER DEBUG ===' && pwd && ls -la /app && echo '=== END DEBUG ===' && npm install && npm test"
     tty: true
     stdin_open: true
