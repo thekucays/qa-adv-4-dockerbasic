@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     working_dir: /app
     volumes:
-      - .:/app
-    command: sh -lc "echo '=== CONTAINER DEBUG ===' && cd qa-adv-4-dockerbasic && pwd && ls -la && echo '=== END DEBUG ===' && npm install && npm test"
+      - ${WORKSPACE}/qa-adv-4-dockerbasic:/app
+    command: sh -lc "echo '=== CONTAINER DEBUG ===' && pwd && ls -la && echo '=== END DEBUG ===' && npm install && npm test"
     tty: true
     stdin_open: true
