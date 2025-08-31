@@ -5,10 +5,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    working_dir: /app
+    # working_dir: /app
+    working_dir: ${WORKSPACE}
     volumes:
       # - .:/app
-      - .:.
+      - .:${WORKSPACE}
     command: sh -c "echo '=== CONTAINER DEBUG ===' && pwd && ls -la && echo '=== END DEBUG ===' && npm install && npm test"
     tty: true
     stdin_open: true
