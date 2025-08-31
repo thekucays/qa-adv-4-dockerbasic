@@ -8,6 +8,6 @@ services:
     working_dir: /app
     volumes:
       - .:/app
-    command: sh -c "echo '=== CONTAINER DEBUG ===' && pwd && ls -la && echo '=== END DEBUG ===' && npm install && npm test"
+    command: sh -c "echo '=== CONTAINER DEBUG ===' && cd qa-adv-4-dockerbasic && pwd && ls -la && echo '=== END DEBUG ===' && npm install && npm test"
     tty: true
     stdin_open: true
