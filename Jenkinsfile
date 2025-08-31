@@ -5,9 +5,9 @@ pipeline {
         stage('Build & Test') {
             steps {
                 dir("${WORKSPACE}") {
-                    sh '''
+                    sh """
                         echo "=== DEBUGGING - JenkinsFile ==="
-                        echo "Current directory: $(pwd)"
+                        echo "Current directory: \$(pwd)"
                         echo "WORKSPACE: ${WORKSPACE}"
                         echo "Files in current directory:"
                         ls -la 
@@ -19,7 +19,7 @@ pipeline {
                         # Run build + test with docker-compose
                         docker-compose down --volumes --remove-orphans || true
                         docker-compose up --build --exit-code-from test-runner
-                    '''
+                    """
                 }
             }
         }
