@@ -6,7 +6,7 @@ pipeline {
             steps {
                 // Debug: Let's see what's happening
                 sh '''
-                    echo "=== DEBUGGING ==="
+                    echo "=== DEBUGGING - JenkinsFile ==="
                     echo "Current directory: $(pwd)"
                     echo "WORKSPACE: ${WORKSPACE}"
                     echo "Files in current directory:"
@@ -15,7 +15,7 @@ pipeline {
                     echo "Files in WORKSPACE:"
                     ls -la ${WORKSPACE}
                     echo ""
-                    echo "=== END DEBUGGING ==="
+                    echo "=== END DEBUGGING - Jenkinsfile ==="
                 '''
 
                 // Run build + test
