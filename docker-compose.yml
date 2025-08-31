@@ -7,10 +7,8 @@ services:
       dockerfile: Dockerfile
     working_dir: /app
     volumes:
-      - .:/app
-      # - /projects:/app
-    # command: sh -lc "echo '=== CONTAINER DEBUG ===' && pwd && ls -la ${WORKSPACE} && echo '=== END DEBUG ===' && npm install && npm test"
+      # - .:/app
+      - /var/jenkins_home/workspace/sesi7-1:/app
     command: sh -lc "echo '=== CONTAINER DEBUG ===' && pwd && ls -la /app && echo '=== END DEBUG ===' && npm install && npm test"
-    # If you need interactive debugging:
     tty: true
     stdin_open: true
