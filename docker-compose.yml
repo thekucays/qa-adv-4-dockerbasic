@@ -6,8 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile
     working_dir: /app
-    volumes:
-      - ${WORKSPACE}/qa-adv-4-dockerbasic:/app
+    # volumes:
+    #   - .:/app
     command: sh -lc "echo '=== CONTAINER DEBUG ===' && pwd && ls -la && echo '=== END DEBUG ===' && npm install && npm test"
     #command: sh -lc "echo '=== CONTAINER DEBUG ===' && cd ${WORKSPACE}/qa-adv-4-dockerbasic && ls -la && echo '=== END DEBUG ===' && npm install && npm test"
     tty: true
