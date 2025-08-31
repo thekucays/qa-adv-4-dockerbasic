@@ -10,6 +10,7 @@ pipeline {
                         echo "Current directory: $(pwd)"
                         echo "Files in current directory:"
                         ls -la
+                        pwd
 
                         # Run build + test with docker-compose
                         docker-compose down --volumes --remove-orphans || true
