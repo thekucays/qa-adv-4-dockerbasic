@@ -7,8 +7,8 @@ services:
       dockerfile: Dockerfile
     working_dir: /app
     volumes:
-      # - .:/app
-      - /projects:/app
+      - .:/app
+      # - /projects:/app
     # command: sh -lc "echo '=== CONTAINER DEBUG ===' && pwd && ls -la ${WORKSPACE} && echo '=== END DEBUG ===' && npm install && npm test"
     command: sh -lc "echo '=== CONTAINER DEBUG ===' && pwd && ls -la /app && echo '=== END DEBUG ===' && npm install && npm test"
     # If you need interactive debugging:
