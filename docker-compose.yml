@@ -8,8 +8,8 @@ services:
     working_dir: /app
     
     # remove this when using Jenkins pipeline
-    # volumes:
-    #   - .:/app
+    volumes:
+      - .:/app
     
     command: sh -lc "echo '=== CONTAINER DEBUG ===' && pwd && ls -la && echo '=== END DEBUG ===' && npm install && npm test"
     tty: true
