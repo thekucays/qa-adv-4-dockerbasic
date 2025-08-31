@@ -1,14 +1,17 @@
 pipeline {
     agent any
+    environment {
+        WORKSPACE = "${env.WORKSPACE}"
+    }
 
     stages {
-        stage('Checkout') {
-            steps {
-                // This pulls your repo into Jenkins workspace
-                checkout scm
-            }
-        }
-        
+        // stage('Checkout') {
+        //     steps {
+        //         // This pulls your repo into Jenkins workspace
+        //         checkout scm
+        //     }
+        // }
+
         stage('Build & Test') {
             steps {
                 // Debug: Let's see what's happening
