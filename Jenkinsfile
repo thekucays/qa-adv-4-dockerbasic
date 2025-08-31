@@ -12,7 +12,6 @@ pipeline {
                         echo "Files in current directory:"
                         ls -la 
                         echo "Files in WORKSPACE:"
-                        export WORKSPACE=${WORKSPACE}
                         ls -la ${WORKSPACE}
                         echo ""
                         echo "=== END DEBUGGING - Jenkinsfile ==="
