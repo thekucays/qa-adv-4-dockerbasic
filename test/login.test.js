@@ -13,7 +13,7 @@ describe("Login Test", function () {
       .addArguments("--disable-dev-shm-usage")
       .addArguments("--disable-gpu")
       .addArguments("--remote-debugging-port=9222")
-      .addArguments("--user-data-dir=/tmp/chrome-profile-" + Date.now()); // 👈 unique dir
+      .addArguments("--user-data-dir=/tmp/chrome-profile-" + Date.now());
 
     driver = await new Builder()
       .forBrowser("chrome")
