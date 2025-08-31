@@ -52,3 +52,31 @@ apt-get update && apt-get install -y docker.io docker-compose
 Jenkins
 ----------------------------------------------------------------------
 thekucays - admin123
+
+
+----------------------------------------------------------------------
+Working Example
+----------------------------------------------------------------------
+start docker like this 
+docker run -d --name jenkins -u root -p 8087:8080 -v C:\jenkins_home:/var/jenkins_home -v C:\jenkins_temp_build:/c/jenkins_temp_build -v /var/run/docker.sock:/var/run/docker.sock jenkins/jenkins:lts
+
+- notice mount volume nya /c/jenkins_temp_build
+- ini buat bikin windows nya bisa kenalin mount volume nya 
+- kalau pakai direktory yang linux like, contoh /tmp/build, somehow gabisa
+
+
+pipeline script 
+#!/bin/bash
+set -e
+
+# Copy Jenkins workspace to host folder
+echo "Copying Jenkins workspace to host folder..."
+cp -r $WORKSPACE/* /c/jenkins_temp_build/
+cd /c/jenkins_temp_build
+
+# Stop any old containers
+echo "Stop any old containers"
+docker-compose down --volumes --remove-orphans || true
+
+# Run docker-compose attached, exit code from test-runner
+docker-compose up --build --exit-code-from test-runner
