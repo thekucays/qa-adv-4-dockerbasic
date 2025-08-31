@@ -6,10 +6,11 @@ services:
       context: .
       dockerfile: Dockerfile
     working_dir: /app
-    volumes:
-      - .:/app
-      # - /var/jenkins_home/workspace/sesi7-1:/app
-      # - ${WORKSPACE}:/app
+    
+    # remove this when using Jenkins pipeline
+    # volumes:
+    #   - .:/app
+    
     command: sh -lc "echo '=== CONTAINER DEBUG ===' && pwd && echo '=== END DEBUG ===' && npm install && npm test"
     tty: true
     stdin_open: true
